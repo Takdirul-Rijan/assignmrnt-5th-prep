@@ -117,12 +117,16 @@
             >
               <div class="card-body">
                 <!-- top row: icon + title + heart -->
-                <div class="flex items-start justify-between">
+                <div class="flex justify-between items-center">
                   <!-- icon circle -->
                   <div
-                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                    class="w-10 h-10 rounded-3xl flex items-center justify-center"
                   >
-                    <i class="fa-solid fa-phone"></i>
+                    <img
+                      class="bg-[#41ff6b1a] p-2 rounded-lg"
+                      src="./assets/emergency.png"
+                      alt=""
+                    />
                   </div>
 
                   <!-- heart button (clicking increases navbar heart count) -->
@@ -135,24 +139,30 @@
                   </button>
                 </div>
 
-                <h3 class="card-title mt-2 text-base">
+                <h3 class="card-title mt-2 text-base font-bold">
                   National Emergency Number
                 </h3>
                 <p class="text-sm opacity-70 -mt-1">National Emergency</p>
 
-                <div class="text-2xl font-extrabold mt-1">999</div>
+                <div class="text-2xl font-bold mt-1">999</div>
 
                 <div class="mt-2">
-                  <span class="badge">All</span>
+                  <span class="badge bg-[#f2f2f2] rounded-xl">All</span>
                 </div>
 
                 <!-- Actions -->
-                <div class="card-actions justify-start mt-4">
-                  <button class="btn btn-outline btn-sm" data-action="copy">
-                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                <div class="card-actions flex flex-nowrap justify-center mt-4">
+                  <button
+                    class="btn btn-outline btn-sm w-1/2"
+                    data-action="copy"
+                  >
+                    <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button class="btn btn-success btn-sm" data-action="call">
-                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  <button
+                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
+                    data-action="call"
+                  >
+                    <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
