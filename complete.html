@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emergency Service Directory</title>
 
     <!-- DaisyUI -->
@@ -24,9 +24,8 @@
       referrerpolicy="no-referrer"
     />
   </head>
-
   <body class="bg-white p-3">
-    <!-- Navbar -->
+    <!-- navbar -->
 
     <header class="flex justify-between p-3">
       <div class="flex gap-3">
@@ -72,14 +71,12 @@
       </div>
     </header>
 
-    <!-- =========================
-       HERO SECTION
-       ========================= -->
+    <!-- hero section -->
+
     <section class="bg-gradient-to-r from-[#013223] to-[#006747] text-white">
       <div
         class="max-w-7xl mx-auto px-4 py-10 flex flex-col items-center text-center"
       >
-        <!-- 🔄 Replace with a relevant logo (e.g., govt seal) -->
         <img
           src="./assets/logo-dark.png"
           alt=""
@@ -97,28 +94,21 @@
       </div>
     </section>
 
-    <!-- =========================
-       MAIN SECTION (Cards + History)
-       ========================= -->
+    <!-- main section for Cards and History -->
+
     <main class="max-w-7xl mx-auto px-4 py-6">
-      <!-- Grid: left (cards) span 3, right (history) span 1 on large screens -->
       <div class="grid gap-6 lg:grid-cols-4">
-        <!-- ============ LEFT: CARD LIST ============ -->
         <section aria-label="Emergency Hotline Section" class="lg:col-span-3">
-          <!-- 3×3 grid on large screens; responsive on small -->
           <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" id="card-grid">
-            <!-- =========================
-               CARD 1: National Emergency
-               ========================= -->
+            <!-- card 1 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="National Emergency Number"
               data-number="999"
             >
               <div class="card-body">
-                <!-- top row: icon + title + heart -->
                 <div class="flex justify-between items-center">
-                  <!-- icon circle -->
                   <div
                     class="w-10 h-10 rounded-3xl flex items-center justify-center"
                   >
@@ -129,7 +119,6 @@
                     />
                   </div>
 
-                  <!-- heart button (clicking increases navbar heart count) -->
                   <button
                     class="btn btn-ghost btn-xs"
                     data-heart
@@ -150,7 +139,6 @@
                   <span class="badge bg-[#f2f2f2] rounded-xl">All</span>
                 </div>
 
-                <!-- Actions -->
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
                   <button
                     class="btn btn-outline btn-sm w-1/2"
@@ -159,7 +147,7 @@
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
                   <button
-                    class="btn btn-success btn-sm bg-green-600 w-1/2"
+                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
                     data-action="call"
                   >
                     <i class="fa-solid fa-phone"></i> Call
@@ -168,7 +156,8 @@
               </div>
             </article>
 
-            <!-- CARD 2: Police -->
+            <!-- card 2 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Police Helpline Number"
@@ -220,7 +209,7 @@
               </div>
             </article>
 
-            <!-- CARD 3: Fire -->
+            <!-- card 3 -->
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Fire Service Number"
@@ -272,7 +261,8 @@
               </div>
             </article>
 
-            <!-- CARD 4: Ambulance -->
+            <!-- card 4 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Ambulance Service"
@@ -324,7 +314,8 @@
               </div>
             </article>
 
-            <!-- CARD 5: Women & Child -->
+            <!-- card 5 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Women & Child Helpline"
@@ -378,7 +369,8 @@
               </div>
             </article>
 
-            <!-- CARD 6: Anti-Corruption -->
+            <!-- card 6 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Anti-Corruption Helpline"
@@ -430,7 +422,8 @@
               </div>
             </article>
 
-            <!-- CARD 7: Electricity -->
+            <!-- card 7 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Electricity Helpline"
@@ -482,7 +475,8 @@
               </div>
             </article>
 
-            <!-- CARD 8: BRAC -->
+            <!-- card 8 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Brac Helpline"
@@ -534,7 +528,8 @@
               </div>
             </article>
 
-            <!-- CARD 9: Railway -->
+            <!-- card 9 -->
+
             <article
               class="card bg-base-100 shadow-xl relative"
               data-service="Bangladesh Railway Helpline"
@@ -587,33 +582,11 @@
             </article>
           </div>
         </section>
-
-        <!-- ============ RIGHT: CALL HISTORY ============ -->
-        <aside class="lg:col-span-1">
-          <div class="card bg-white shadow-xl">
-            <div class="card-body">
-              <!-- Header row -->
-              <div class="flex items-center justify-between">
-                <h2 class="font-bold flex items-center gap-2">
-                  <i class="fa-solid fa-clock-rotate-left"></i>
-                  Call History
-                </h2>
-                <button id="clear-history" class="btn btn-ghost btn-sm">
-                  Clear
-                </button>
-              </div>
-
-              <!-- ⚠️ Empty list initially. JS will append items here on Call -->
-              <ul id="history-list" class="mt-4 space-y-3"></ul>
-            </div>
-          </div>
-        </aside>
       </div>
     </main>
 
-    <!-- =========================
-       Your JavaScript file
-       ========================= -->
-    <script src="app.js" defer></script>
+    <!-- JavaScript file -->
+
+    <script src="./script.js"></script>
   </body>
 </html>
