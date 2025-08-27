@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emergency Service Directory</title>
+
+    <!-- DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white p-3">
+    <!-- Navbar -->
+
+    <header class="flex justify-between p-3">
+      <div class="flex gap-3">
+        <!-- Replace src with your real logo -->
+        <img
+          class="w-9 h-9 rounded-full text-white text-sm"
+          src="./assets/logo.png"
+          alt=""
+        />
+        <div class="font-extrabold text-2xl text-[#006747]">
+          Emergency <br />
+          Service
+        </div>
+      </div>
+
+      <div class="flex gap-3 pr-3 flex-col md:flex-row">
+        <!-- Heart counter (starts at 0) -->
+        <div
+          class="badge badge-ghost gap-2 text-xl rounded-2xl h-12 w-25 bg-[#41ff6b1a]"
+          title="Favorites"
+        >
+          <span id="heart-count" class="font-bold">0</span>
+          <i class="fa-solid fa-heart text-rose-500"></i>
+        </div>
+
+        <!-- Coin counter (starts at 100) -->
+        <div
+          class="badge gap-2 text-xl rounded-2xl h-12 w-25 bg-[#41ff6b1a]"
+          title="Coins"
+        >
+          <span id="coin-count" class="font-bold">100</span>
+          <i class="fa-solid fa-coins"></i>
+        </div>
+
+        <!-- Copy counter (starts at 0) -->
+        <div
+          class="badge badge-success gap-2 text-xl rounded-2xl h-12 w-25 bg-[#00A63E] text-white"
+          title="Copied numbers"
+        >
+          <span id="copy-count">0</span>
+          <span>Copy</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+       HERO SECTION
+       ========================= -->
+    <section class="bg-gradient-to-r from-emerald-700 to-green-600 text-white">
+      <div
+        class="max-w-7xl mx-auto px-4 py-10 flex flex-col items-center text-center"
+      >
+        <!-- 🔄 Replace with a relevant logo (e.g., govt seal) -->
+        <img
+          src="YOUR_HERO_LOGO.png"
+          alt="Govt Logo"
+          class="w-16 h-16 mb-4 rounded-full object-contain"
+        />
+
+        <h1 class="text-3xl md:text-4xl font-extrabold">
+          Emergency Service Directory
+        </h1>
+
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Government emergency services at your fingertip — A project by
+          Government of the People's Republic of Bangladesh
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+       MAIN SECTION (Cards + History)
+       ========================= -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+      <!-- Grid: left (cards) span 3, right (history) span 1 on large screens -->
+      <div class="grid gap-6 lg:grid-cols-4">
+        <!-- ============ LEFT: CARD LIST ============ -->
+        <section aria-label="Emergency Hotline Section" class="lg:col-span-3">
+          <!-- 3×3 grid on large screens; responsive on small -->
+          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" id="card-grid">
+            <!-- =========================
+               CARD 1: National Emergency
+               ========================= -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="National Emergency Number"
+              data-number="999"
+            >
+              <div class="card-body">
+                <!-- top row: icon + title + heart -->
+                <div class="flex items-start justify-between">
+                  <!-- icon circle -->
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+
+                  <!-- heart button (clicking increases navbar heart count) -->
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">
+                  National Emergency Number
+                </h3>
+                <p class="text-sm opacity-70 -mt-1">National Emergency</p>
+
+                <div class="text-2xl font-extrabold mt-1">999</div>
+
+                <div class="mt-2">
+                  <span class="badge">All</span>
+                </div>
+
+                <!-- Actions -->
+                <div class="card-actions justify-start mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 2: Police -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Police Helpline Number"
+              data-number="999"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">
+                  Police Helpline Number
+                </h3>
+                <p class="text-sm opacity-70 -mt-1">Police</p>
+                <div class="text-2xl font-extrabold mt-1">999</div>
+                <div class="mt-2"><span class="badge">Police</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 3: Fire -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Fire Service Number"
+              data-number="999"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-fire-extinguisher"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">Fire Service Number</h3>
+                <p class="text-sm opacity-70 -mt-1">Fire Service</p>
+                <div class="text-2xl font-extrabold mt-1">999</div>
+                <div class="mt-2"><span class="badge">Fire</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 4: Ambulance -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Ambulance Service"
+              data-number="1994-999999"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-truck-medical"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">Ambulance Service</h3>
+                <p class="text-sm opacity-70 -mt-1">Ambulance</p>
+                <div class="text-2xl font-extrabold mt-1">1994-999999</div>
+                <div class="mt-2"><span class="badge">Health</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 5: Women & Child -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Women & Child Helpline"
+              data-number="109"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">
+                  Women &amp; Child Helpline
+                </h3>
+                <p class="text-sm opacity-70 -mt-1">
+                  Women &amp; Child Helpline
+                </p>
+                <div class="text-2xl font-extrabold mt-1">109</div>
+                <div class="mt-2"><span class="badge">Help</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 6: Anti-Corruption -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Anti-Corruption Helpline"
+              data-number="106"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">
+                  Anti-Corruption Helpline
+                </h3>
+                <p class="text-sm opacity-70 -mt-1">Anti-Corruption</p>
+                <div class="text-2xl font-extrabold mt-1">106</div>
+                <div class="mt-2"><span class="badge">Govt.</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 7: Electricity -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Electricity Helpline"
+              data-number="16216"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-bolt"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">Electricity Helpline</h3>
+                <p class="text-sm opacity-70 -mt-1">Electricity Outage</p>
+                <div class="text-2xl font-extrabold mt-1">16216</div>
+                <div class="mt-2"><span class="badge">Electricity</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 8: BRAC -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Brac Helpline"
+              data-number="16445"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-handshake-angle"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">Brac Helpline</h3>
+                <p class="text-sm opacity-70 -mt-1">Brac</p>
+                <div class="text-2xl font-extrabold mt-1">16445</div>
+                <div class="mt-2"><span class="badge">NGO</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 9: Railway -->
+            <article
+              class="card bg-base-100 shadow-xl relative"
+              data-service="Bangladesh Railway Helpline"
+              data-number="163"
+            >
+              <div class="card-body">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-full bg-base-200 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-train"></i>
+                  </div>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    data-heart
+                    title="Add to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+
+                <h3 class="card-title mt-2 text-base">
+                  Bangladesh Railway Helpline
+                </h3>
+                <p class="text-sm opacity-70 -mt-1">Bangladesh Railway</p>
+                <div class="text-2xl font-extrabold mt-1">163</div>
+                <div class="mt-2"><span class="badge">Travel</span></div>
+
+                <div class="card-actions mt-4">
+                  <button class="btn btn-outline btn-sm" data-action="copy">
+                    <i class="fa-solid fa-copy mr-2"></i> Copy
+                  </button>
+                  <button class="btn btn-success btn-sm" data-action="call">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Call
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ============ RIGHT: CALL HISTORY ============ -->
+        <aside class="lg:col-span-1">
+          <div class="card bg-white shadow-xl">
+            <div class="card-body">
+              <!-- Header row -->
+              <div class="flex items-center justify-between">
+                <h2 class="font-bold flex items-center gap-2">
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                  Call History
+                </h2>
+                <button id="clear-history" class="btn btn-ghost btn-sm">
+                  Clear
+                </button>
+              </div>
+
+              <!-- ⚠️ Empty list initially. JS will append items here on Call -->
+              <ul id="history-list" class="mt-4 space-y-3"></ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- =========================
+       Your JavaScript file
+       ========================= -->
+    <script src="app.js" defer></script>
+  </body>
+</html>
