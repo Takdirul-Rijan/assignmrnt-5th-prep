@@ -43,23 +43,18 @@
       <div class="flex gap-3 pr-3 flex-col md:flex-row">
         <div
           class="badge badge-ghost gap-2 text-xl rounded-2xl h-12 w-25 bg-[#41ff6b1a]"
-          title="Favorites"
         >
           <span id="heart-count" class="font-bold">0</span>
           <img class="h-6 w-6" src="./assets/heart.png" alt="" />
         </div>
 
-        <div
-          class="badge gap-2 text-xl rounded-2xl h-12 w-25 bg-[#41ff6b1a]"
-          title="Coins"
-        >
+        <div class="badge gap-2 text-xl rounded-2xl h-12 w-25 bg-[#41ff6b1a]">
           <span id="coin-count" class="font-bold">100</span>
           <img class="h-6 w-6" src="./assets/coin.png" alt="" />
         </div>
 
         <div
           class="badge badge-success gap-2 text-xl rounded-2xl h-12 w-25 bg-[#00A63E] text-white"
-          title="Copied numbers"
         >
           <span id="copy-count">0</span>
           <span>Copy</span>
@@ -96,15 +91,13 @@
 
     <main class="max-w-7xl mx-auto">
       <div class="grid gap-6 lg:grid-cols-4 bg-[#41ff6b1a] p-5">
-        <section aria-label="Emergency Hotline Section" class="lg:col-span-3">
+        <!-- card section -left -->
+
+        <section class="lg:col-span-3">
           <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" id="card-grid">
             <!-- card 1 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="National Emergency Number"
-              data-number="999"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -117,11 +110,7 @@
                     />
                   </div>
 
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -138,29 +127,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 2 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Police Helpline Number"
-              data-number="999"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -172,11 +151,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -191,28 +166,18 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 3 -->
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Fire Service Number"
-              data-number="999"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -224,11 +189,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -243,29 +204,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 4 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Ambulance Service"
-              data-number="1994-999999"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -277,11 +228,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -296,29 +243,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 5 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Women & Child Helpline"
-              data-number="109"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -330,11 +267,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -365,15 +298,11 @@
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 6 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Anti-Corruption Helpline"
-              data-number="106"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -385,11 +314,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -404,29 +329,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 7 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Electricity Helpline"
-              data-number="16216"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -438,11 +353,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -457,29 +368,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 8 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Brac Helpline"
-              data-number="16445"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -491,11 +392,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -510,29 +407,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
 
             <!-- card 9 -->
 
-            <article
-              class="card bg-base-100 shadow-xl relative"
-              data-service="Bangladesh Railway Helpline"
-              data-number="163"
-            >
+            <div class="card bg-base-100 shadow-xl">
               <div class="card-body">
                 <div class="flex justify-between items-center">
                   <div
@@ -544,11 +431,7 @@
                       alt=""
                     />
                   </div>
-                  <button
-                    class="btn btn-ghost btn-xs"
-                    data-heart
-                    title="Add to favorites"
-                  >
+                  <button class="btn btn-ghost btn-xs">
                     <i class="fa-regular fa-heart"></i>
                   </button>
                 </div>
@@ -563,25 +446,19 @@
                 </div>
 
                 <div class="card-actions flex flex-nowrap justify-center mt-4">
-                  <button
-                    class="btn btn-outline btn-sm w-1/2"
-                    data-action="copy"
-                  >
+                  <button class="btn btn-outline btn-sm w-1/2">
                     <i class="fa-solid fa-copy"></i> Copy
                   </button>
-                  <button
-                    class="btn btn-success btn-sm bg-[#00a63e] w-1/2"
-                    data-action="call"
-                  >
+                  <button class="btn btn-success btn-sm bg-[#00a63e] w-1/2">
                     <i class="fa-solid fa-phone"></i> Call
                   </button>
                 </div>
               </div>
-            </article>
+            </div>
           </div>
         </section>
 
-        <!-- call history section -->
+        <!-- call history section - right -->
 
         <aside class="lg:col-span-1">
           <div class="card bg-white shadow-xl">
@@ -607,7 +484,5 @@
     </main>
 
     <!-- JavaScript file -->
-
-    <script src="./app.js"></script>
   </body>
 </html>
