@@ -138,10 +138,10 @@ heartBtn9.addEventListener("click", function () {
 /*****************************
  * PART 2 — REUSABLE (runs)
  * Same behavior, but short and clean.
- * Only vanilla JS. Uses your requested function name: myName()
+ * Only vanilla JS. Uses your requested function name:heartIconClick()
  ******************************/
 
-// myName = increases the number in the navbar heart badge by +1
+//heartIconClick = increases the number in the navbar heart badge by +1
 function heartIconClick() {
   const navHeartCountSpan = document.getElementById("heart-count");
   const currentCount = parseInt(navHeartCountSpan.innerText);
